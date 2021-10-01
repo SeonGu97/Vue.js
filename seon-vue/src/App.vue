@@ -1,45 +1,76 @@
 <template>
-  <Nav />
+  <Nav ref="nav" />
+  <Side @click="side" ref="side" />
+  <Container @v-update="update" ref="cntr" />
   <Footer />
-  <Container @v-update="update" />
 </template>
 
 <script>
 import Nav from './components/Vue/Nav.vue';
-import Footer from './components/Vue/Footer.vue';
+import Side from './components/Vue/Side.vue';
 import Container from './components/Vue/Container.vue';
+import Footer from './components/Vue/Footer.vue';
 
 export default {
   name: 'App',
   data() {
     return {
-      
+
     }
   },
   components: {
     Nav,
-    Footer,
+    Side,
     Container,
+    Footer,
   },
   methods: {
     update() {
-      console.log(this.$refs.cntr)
+        if(this.pc.matches) {
+          this.$refs.nav.$el.classList.toggle('hide');
+          this.$refs.cntr.$el.classList.toggle('expansion');
+        }
+
+        if(this.tablet.matches) {
+          this.$refs.nav.$el.classList.toggle('clone-hide');
+          this.$refs.cntr.$el.classList.toggle('clone-expansion');
+
+          this.$refs.side.$el.classList.add('show');
+        }
+
+        if(this.moblie.matches) {
+          this.$refs.nav.$el.classList.toggle('clone-hide');
+          this.$refs.cntr.$el.classList.toggle('clone-expansion');
+
+          this.$refs.side.$el.classList.add('show');
+        }
     },
     resize() {
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
         if(this.pc.matches) {
-          console.log('pc');
+          if(this.$refs.side.$el.classList.contains('show')) {
+            this.$refs.nav.$el.classList.remove('clone-hide');
+            this.$refs.cntr.$el.classList.remove('clone-expansion');
+            this.$refs.side.$el.classList.remove('show');
+          }
         }
         
         if(this.tablet.matches) {
-          console.log('tablet');
+          this.$refs.nav.$el.classList.remove('hide');
+          this.$refs.cntr.$el.classList.remove('expansion');
         }
 
         if(this.moblie.matches) {
-          console.log('moblie');
+          this.$refs.nav.$el.classList.remove('hide');
+          this.$refs.cntr.$el.classList.remove('expansion');
         }
       }, this.dlray);
+    },
+    side() {
+      this.$refs.side.$el.classList.remove('show');
+      this.$refs.nav.$el.classList.remove('clone-hide');
+      this.$refs.cntr.$el.classList.remove('clone-expansion');
     }
   },
   mounted() {

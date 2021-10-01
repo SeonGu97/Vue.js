@@ -1,6 +1,6 @@
 <template>
-    <div class="menu">
-        <a href="#" @click="update"><i class="fas fa-bars"></i></a>
+    <div class="menu" @click="update">
+        <i class="fas fa-bars"></i>
     </div>
 </template>
 

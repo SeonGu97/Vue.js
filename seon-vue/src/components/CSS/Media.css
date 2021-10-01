@@ -1,15 +1,72 @@
-/* PC , 테블릿 (해상도 768px ~ 1023px)*/
-@media all and (min-width:768px) and (max-width:1023px) {
+/* Style.css */
+@import url(./Style.css);
 
+/* PC , 테블릿 (해상도 768px ~ 1023px)*/
+@media screen and (min-width:768px) and (max-width:1023px) {
+    /* nav */
+    nav {
+        transform: translateX(-100%);
+    }
+
+    /* hide */
+    .hide {
+        transform: translateX(-100%);
+    }
+    
+    /* container */
+    .container {
+        padding-left: 0px;
+    }
+
+    /* expansion */
+    .expansion {
+        padding-left: 0px;
+    }
 } 
 
 /* 모바일, 테블릿(해상도 480px ~ 767px)*/
-@media all and (min-width:480px) and (max-width:767px) {
+@media screen and (min-width:480px) and (max-width:767px) {
+    /* nav */
+    nav {
+        transform: translateX(-100%);
+    }
 
+    /* hide */
+    .hide {
+        transform: translateX(-100%);
+    }
+    
+    /* container */
+    .container {
+        padding-left: 0px;
+    }
+
+    /* expansion */
+    .expansion {
+        padding-left: 0px;
+    }
 }
 
 /* 모바일, 테블릿 (해상도 ~ 479px)*/
-@media all and (max-width:479px) {
+@media screen and (max-width:479px) {
+    /* nav */
+    nav {
+        transform: translateX(-100%);
+    }
 
+    /* hide */
+    .hide {
+        transform: translateX(-100%);
+    }
+    
+    /* container */
+    .container {
+        padding-left: 0px;
+    }
+
+    /* expansion */
+    .expansion {
+        padding-left: 0px;
+    }
 }
 
