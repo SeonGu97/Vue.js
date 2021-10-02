@@ -1,6 +1,8 @@
 <template>
-  <li class="books" v-for="book in books" :key="book" @click="active">
-      {{ book }}
+  <li class="books" v-for="item in books" :key="item.id" @click="active">
+      <router-link class="router-link" :to="{path: item.router}">
+        {{ item.name }}
+      </router-link>
   </li>
 </template>
 
@@ -8,7 +10,10 @@
 export default {
     data() {
         return {
-            books: ['Home', 'About']
+            books: [
+                { id: 1, name: 'Home', router: '/' },
+                { id: 2, name: 'About', router: '/About' }
+            ]
         }
     },
     methods: {
@@ -18,12 +23,8 @@ export default {
                 items.classList.remove('active');
             })
 
-            e.target.classList.add('active');
+            e.target.parentElement.classList.add('active');
         }
-    },
-    mounted() {
-        const books = document.querySelectorAll('.books');
-        books[0].classList.add('active');
     }
 }
 </script>
