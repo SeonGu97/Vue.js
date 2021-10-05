@@ -9,6 +9,7 @@ body {
     margin: 0;
     font-family: 'Noto Sans KR', sans-serif;
     color: #34495E;
+    overflow: hidden;
 }
 
 /* app */
@@ -139,9 +140,14 @@ header {
 /* main */
 main {
     width: 100%;
+    min-width: 350px;
     height: 100%;
     max-height: calc(100% - 50px);
+    padding: 40px;
     background: #fafafa;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 /* footer */
@@ -190,4 +196,185 @@ footer {
 /* show */
 .show {
     display: block;
+}
+
+/* h1 */
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 10px solid #f57f17;
+    padding: 5px 15px;
+}
+
+/* itme-1 */
+.item-1 {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+    flex-wrap: wrap;
+}
+
+/* img */
+.img > img {
+    width: 300px;
+    border-radius: 10px;
+    margin: 0px 25px;
+}
+
+/* information */
+.information {
+    display: flex;
+    width: 300px;
+    height: 300px;
+    justify-content: space-between;
+    padding: 40px 0px;
+    margin: 0px 25px;
+}
+
+/* box-1, box-2 */
+.box-1,
+.box-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    white-space: nowrap;
+}
+
+.box-1 > p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* box-2 */
+.box-2 > p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #616161;
+}
+
+/* item-2-wrap, item-3-wrap */
+.item-2-wrap,
+.item-3-wrap {
+    margin-top: 100px;
+}
+
+/* item-2 */ 
+.item-2 {
+    display: flex;
+    justify-content: center;
+}
+
+/* skills */
+.skills {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+/* font awesome */
+.skills > 
+.fas,
+.fab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 5rem;
+    position: relative;
+}
+
+.skills > i > p {
+    color: #34495E;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.skills > i > p > span {
+    position: absolute;
+    top: -5px;
+    left: 37.5%;
+}
+
+.fa-html5 {
+    color: #e34c26;
+}
+
+.fa-css3-alt {
+    color: #264de4;
+}
+
+.fa-js-square {
+    color: #f0db4f;
+}
+
+.fa-vuejs {
+    color: #41B883;
+}
+
+/* item-3 */
+.item-3 {
+    display: flex;
+    justify-content: center;
+}
+
+/* card */
+.card {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.card > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* top */
+.top {
+    display: flex;
+    width: 100px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background: #333;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 3px 3px 5px 0px #9e9e9e;
+    transform: translateY(45%);
+}
+
+/* bottom */
+.bottom {
+    display: flex;
+    width: 120px;
+    height: 75px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-radius: 5px;
+    background: #f0db4f;
+    box-shadow: 4px 4px 5px 0px #bdbdbd;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative;
+    transform: translateY(-5%);
+}
+
+.card> a:hover .top {
+    transition: transform 0.3s;
+    transform: translateY(0%);
+}
+
+.card> a:hover .bottom {
+    transition: transform 0.3s;
+    transform: translateY(0%);
 }
